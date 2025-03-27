@@ -36,6 +36,11 @@ class Helper
         return admin_url( 'admin.php?page=' . $slug . '&profile_id=' . $userId );
     }
 
+    public static function get_sitter_profile_url($userId = 0)
+    {
+        return admin_url( 'admin.php?page=sitter-profile-view&profile_id=' . $userId );
+    }
+
 
     public static function price_break_down_array(array $priceList, $durationInMin, $petNumbers)
     {

@@ -64,7 +64,7 @@ class Front_Page
         $page_data = array(
 			'post_type'   => 'page',
 			'post_status' => 'publish',
-            'post_title'   => esc_html__('Find pet sitter and hire', 'petcare-service'),
+            'post_title'   => esc_html__('Find pet sitter and hire', 'mind-my-cat'),
 			'post_name'   => $this->page_slug ,
 			'post_content' => $content,
 			'meta_input'  => array(
