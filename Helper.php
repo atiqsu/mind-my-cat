@@ -115,12 +115,6 @@ class Helper
         return wc_get_endpoint_url('orders', '', self::get_my_account_url()) . '/' . $orderId;
     }
 
-    public static function getPrevisitProductId()
-    {
-        //todo - on plugin active create the product and save it in option
-
-        return 231;
-    }
 
     public static function print_datalist($data, $key = 'name') 
     {
