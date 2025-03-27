@@ -58,10 +58,10 @@ class Boot
     {
 
         # CPTs
-        //(new Cpt_Services)->init();
+        (new Cpt_Services)->init();
 
         # All ajax handlers
-        new Handle_Search_Submit;
+        //new Handle_Search_Submit;
         new Ajax_Get_Sitter_Info;
         new Ajax_Save_Owner_Requested_Schedule;
         new Ajax_Previsit_Fee_Deposit;
@@ -73,11 +73,10 @@ class Boot
         new Ajax_Session_End;
 
 
-        //(new Pet_Types)->init();
         new Admin_Menu;
-        new Sitter_Finder;
+        //new Sitter_Finder;
         //new Service_Wanted;
-        (new Handle_Hiring)->init();
+        //(new Handle_Hiring)->init();
 
 
 
@@ -148,17 +147,14 @@ class Boot
     public function late_hooks()
     {
 
-        #Ajax call
-
-
         # shortcodes ....... 
-        (new Search_Filter)->init();
-        (new Search_Result)->init();
-        (new Contract_Details)->init();
-
-        
-        Woocom_Handler::add_endpoint();
-        new Woocom_Handler;
+       (new Search_Filter)->init();
+       (new Search_Result)->init();
+//        (new Contract_Details)->init();
+//
+//
+//        Woocom_Handler::add_endpoint();
+//        new Woocom_Handler;
     }
 }
 

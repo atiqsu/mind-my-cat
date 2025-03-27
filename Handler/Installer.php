@@ -3,6 +3,7 @@
 namespace Mindmycat\Handler;
 
 use Mindmycat\Db\Migrator;
+use Mindmycat\Model\Role;
 use Mindmycat\Pages\Front_Page;
 
 class Installer
@@ -13,7 +14,7 @@ class Installer
     public static function activate()
     {
 
-        User_Role::add_default();
+        Role::add_default();
 
         Migrator::run();
 

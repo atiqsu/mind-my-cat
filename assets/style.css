@@ -1,0 +1,440 @@
+
+
+.flx-display {
+    display: flex;
+    align-items: center;
+}
+
+.flx-display label {
+    padding: 0 5px;
+}
+
+.flx-cont {
+    display: flex;
+    border: dashed 1px red;
+    gap: 10px;
+    /* padding: 10px; */
+}
+
+.boom-col {
+    flex-grow: 1; 
+    /* border: 1px solid blue; */
+    padding: 10px; /* Add some padding to see the column size */
+}
+  
+
+
+/* Remove below when working on react component and design fixing */
+
+form.boom-form {
+    border: solid 1px blue;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+
+input[type=text],  input[type=number], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=date] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  .inp-cnt {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .inp-cnt label {
+    flex-grow: 1;
+  }
+
+
+  /* End of temporay form design block  */
+  
+/* temporay table design block   */
+
+.search_result_table {
+    border: solid 1px blue;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    width: 100%;
+}
+
+
+/* End of temporay table design block   */
+
+
+
+
+
+.user_filter_form {
+    padding: 10px; 
+    margin:10px; 
+    border: dashed 1px green;
+}
+
+.serach_result {
+    padding: 10px; 
+    margin:10px; 
+    border: dashed 1px grey;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.price_breakdown_section {
+
+    padding: 10px; 
+    margin:10px; 
+    border: dashed 1px red;
+}
+
+.price_breakdown_section table {
+    width: 100%;
+    border-collapse: collapse;
+    border:1px solid black
+}
+
+.price_breakdown_section table tr td {
+    border:1px solid black;
+
+}
+
+.price_breakdown_section table tr td:last-child {
+
+    text-align: right;
+    padding: 0 5px;
+}
+
+.sitter_profile_grid {
+    border: solid 1px blue;
+    margin: 5px;
+    width: 200px;
+
+
+}
+
+.serach_result .sitter_profile_grid img {
+
+    width: 100px;
+
+}
+
+
+/* search result popup */
+
+.mmc-search-results {
+    border: solid 1px blue;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mmc-search-results .profile_grid {
+    border: solid 1px red;
+    padding: 10px;
+    flex-grow: 1;
+    margin: 5px;
+}
+
+
+.mmc-search-results .profile_grid img {
+
+    width: 100px;
+    height: 100px;
+}
+
+
+/* end of search result popup */
+
+
+
+/* popup content  */
+
+#mmc-popup-content {
+    display: none;
+    border: solid 1px blue;
+    padding: 10px;
+    /* position: fixed; */
+    /* top: 0;
+    left: 0; */
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    z-index: 1000;
+}
+
+#mmc-popup-content-inner {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#mmc-popup-content-inner .header {
+    flex-grow: 1;
+}
+
+#mmc-popup-content-inner .body {
+    flex-grow: 1;
+}   
+
+#mmc-popup-content-inner .footer {
+    flex-grow: 1;
+}
+
+/* end of popup content inner */    
+
+/* calendar table */
+
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+.calendar-table th, .calendar-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.calendar-table thead tr th {
+    border: 1px solid #ddd; 
+    padding: 8px; 
+    text-align: center;
+    ;
+}
+
+.calendar-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 5px 5px 0 0;
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background: #e9ecef;
+    padding: 10px 0;
+}
+
+.weekday {
+    text-align: center;
+    font-weight: bold;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background: #dee2e6;
+}
+
+.calendar-day {
+    background: white;
+    padding: 10px;
+    min-height: 100px;
+    text-align: center;
+}
+
+.calendar-day.empty {
+    background: #f8f9fa;
+}
+
+.calendar-day.selected {
+    background: #e3f2fd;
+}
+.slot3 {
+    border: solid 1px green;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.grid_slot_container {
+    border: dashed 1px green;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.grid_slot {
+    border: solid 1px blue;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.grid_slot_inner {
+    border: dashed 1px red;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+.grid_slot_header {
+    
+    padding: 5px;
+    border-bottom: solid 1px grey;
+    margin-bottom: 10px;
+}
+
+.clicable_slot {
+    cursor: pointer;
+}
+
+.clicable_slot:hover {
+    background-color: #f0f0f0;
+}
+
+.selected_slot {
+    background-color: #e3f2fd;
+}
+
+.bg1 {
+    background-color: #f0f0f0;
+}
+
+.btn-submit {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #45a049;
+}
+
+.btn-submit:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.btn-add {
+    background-color: #1f43e5;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.btn-add:hover {
+    background-color: #1f43e5;
+}
+
+.btn-reject {
+    background-color: #f44336;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.btn-reject:hover {
+    background-color: #f44336;
+}
+
+.btn-cancel {
+    background-color: #f44336;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}       
+
+.btn-cancel:hover {
+    background-color: #f44336;
+}
+
+
+
+.tbl {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+.tbl .mmc-tbl {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+.tbl th, .tbl td {
+    border: 1px solid #ddd; 
+    padding: 8px;
+    text-align: center;
+}
+
+.tbl th {
+    background-color: #f8f9fa;      
+}
+
+.tbl tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+

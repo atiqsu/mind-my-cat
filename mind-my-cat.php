@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Mindmycat Pet Service
  * Description: The most basic draft of the plugin.
- * Plugin URI: https://atiqsu.com/wp-next-bridge
+ * Plugin URI:
  * Author: WPmessiah
  * Version: 1.0.0
  * Author URI: https://boomdevs.co

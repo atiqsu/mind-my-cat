@@ -1,0 +1,61 @@
+
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$border-color: #eee;
+
+
+.test-ar {
+    background-color: #000;
+    color: red;
+    padding: 10px;
+    border-radius: 5px;
+
+
+}
+
+
+#search-filters-root {
+  h2 {
+    margin-bottom: 10px;
+    color: $primary-color;
+  }
+
+  input[type="text"] {
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid $border-color;
+  }
+
+  button {
+    padding: 8px 15px;
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+#search-results-root {
+  h2 {
+    margin-bottom: 10px;
+    color: $secondary-color;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    padding: 5px 0;
+    border-bottom: 1px solid $border-color;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
