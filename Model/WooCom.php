@@ -10,51 +10,54 @@ class WooCom
         return empty( $order ) ? 'No order created' : $order->get_status();
     }
 
-    public static function getPrevisitProductId()
+    public static function getPreVisitProductId($def = 0)
     {
-        $product_id = get_option('mindmycat_previsit_product_id');
-
-        if(!$product_id) {
-            $product_id = self::createPrevisitProduct();
-            self::savePrevisitProductId($product_id);
-        }
-
-        return $product_id;
+        return get_option('mindmycat_previsit_product_id', $def);
     }
 
-    public static function savePrevisitProductId($product_id)
+    public static function savePreVisitProductId($product_id)
     {
-        update_option('mindmycat_previsit_product_id', $product_id);
+        return update_option('mindmycat_previsit_product_id', $product_id);
     }
 
-    public static function createPrevisitProduct()
+    public static function createPreVisitProduct()
     {
-        $product = wc_get_product_id_by_name('Pre consultation fee');
 
+        $productId = wc_get_product_id_by_sku('pre-consultation-fee');
 
-        if(!$product) {
+        if(!$productId) {
             $product = new \WC_Product_Simple();
-            $product->name = 'Pre consultation fee';
-            $product->description = 'Pre consultation fee';
-            $product->price = 80;
+            $product->set_name('Pre consultation fee');
+            $product->set_description('Pre consultation fee');
+            $product->set_regular_price(80);
+            $product->set_sku('pre-consultation-fee');
             $product->set_virtual(true);
             $product->set_stock_status('instock');
             $product->set_sold_individually(true);
             $product->set_manage_stock(false);
             $product->save();
+
+            return $product->get_id();
         }
 
-        return $product->get_id();
-    }
-
-    public static function getPrevisitProduct()
-    {
-        $product_id = self::getPrevisitProductId();
-        return wc_get_product($product_id);
+        return $productId;
     }
 
     public static function unsetPrevisitProduct()
     {
         delete_option('mindmycat_previsit_product_id');
+    }
+
+    public static function getProductByTitle($product_title, $default = null) {
+
+        $products = wc_get_products( array(
+            'name' => $product_title
+        ) );
+
+        if ( count( $products ) > 0 ) {
+            return $products[0];
+        }
+        
+        return $default;
     }
 }

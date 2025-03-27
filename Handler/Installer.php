@@ -16,13 +16,11 @@ class Installer
     {
 
         Role::add_default();
-
         Migrator::run();
 
-        (new Front_Page())->create_or_update_page();
+        (new Front_Page)->create_or_update_page();
 
         self::create_product_if_not_exists();
-
 
         //Seeder::seed();
         //flush_rewrite_rules(); 
@@ -40,7 +38,15 @@ class Installer
 
     protected static function create_product_if_not_exists()
     {
-        $id = WooCom::createPrevisitProduct();
-        WooCom::savePrevisitProductId($id);
+        $id = WooCom::getPreVisitProductId();
+
+        if(empty($id)) {
+
+            $id = WooCom::createPreVisitProduct();
+
+            WooCom::savePrevisitProductId($id);
+        }
+
+        return $id;
     }
 }
