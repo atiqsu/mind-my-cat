@@ -82,8 +82,3 @@ class Search_Result
         return ob_get_clean();
     }
 }
-
-
-
-
-

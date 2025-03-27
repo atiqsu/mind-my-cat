@@ -2,7 +2,6 @@
 
 namespace Mindmycat\Handler;
 
-use Mindmycat\Helper;
 
 /**
  * todo - if have time add nonce check

@@ -224,7 +224,7 @@ class Search_Filter
                         return;
                     }
 
-                    console.log(serviceArea, startDate, endDate, services, timeDuration, hasCondition, condition);
+                    //console.log(serviceArea, startDate, endDate, services, timeDuration, hasCondition, condition);
 
                     if(serviceArea == '') {
 
