@@ -27,9 +27,9 @@ class Admin_Menu
         );
 
         (new Dashboard('pet_care_dashboard'))->init();
-        new Sitter_List('pet_care_dashboard')->init();
-        new Sitter_Profile('pet_care_dashboard')->init();
-        new Owner_List('pet_care_dashboard')->init();
+        (new Sitter_List('pet_care_dashboard'))->init();
+        (new Sitter_Profile('pet_care_dashboard'))->init();
+        (new Owner_List('pet_care_dashboard'))->init();
     }
 
 

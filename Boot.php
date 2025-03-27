@@ -61,7 +61,7 @@ class Boot
         (new Cpt_Services)->init();
 
         # All ajax handlers
-        //new Handle_Search_Submit;
+        new Handle_Search_Submit;
         new Ajax_Get_Sitter_Info;
         new Ajax_Save_Owner_Requested_Schedule;
         new Ajax_Previsit_Fee_Deposit;

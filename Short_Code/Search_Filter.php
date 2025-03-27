@@ -261,7 +261,7 @@ class Search_Filter
 
                     $.post(
                             '<?php echo admin_url('admin-ajax.php'); ?>',
-                            { action: 'bpc_search_submit',  
+                            { action: 'mmc_search_submit',  
                                 data: {
                                     service_area: serviceArea, 
                                     start_date: startDate, 
