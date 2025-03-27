@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     //console.log('Loaded the front js.....');
-    const frontObj = window.bpcFrontObj;
+    const frontObj = window.mmcFrontObj;
 
     let schedulePrevisitDom = document.querySelector('#mmc_schedule_previsit');
     let confirmPrevisitDom = document.querySelector('#mmc_confirm_previsit_date');

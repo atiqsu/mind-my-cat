@@ -49,11 +49,12 @@ const SearchResults = ( {userId} ) => {
           setError('No filter_idd or sitter_id parameter found in the URL.');
         }
 
-        console.log('in useEffect-isLoggedIn', window.bpcFrontObj.mmcUser);
-        if(window.bpcFrontObj.mmcUser.isLoggedIn) {
-            setIsLoggedIn(window.bpcFrontObj.mmcUser.isLoggedIn);
-            setUserRole(window.bpcFrontObj.mmcUser.userRole);
-            setUserIdd(window.bpcFrontObj.mmcUser.userIdd);
+        console.log('in useEffect-isLoggedIn', window.mmcFrontObj.mmcUser);
+
+        if(window.mmcFrontObj.mmcUser.isLoggedIn) {
+            setIsLoggedIn(window.mmcFrontObj.mmcUser.isLoggedIn);
+            setUserRole(window.mmcFrontObj.mmcUser.userRole);
+            setUserIdd(window.mmcFrontObj.mmcUser.userIdd);
         }
 
       }, []
@@ -94,7 +95,7 @@ const SearchResults = ( {userId} ) => {
 
     useEffect(() => {
 
-        console.log('in useEffect-fetchData', filterIdd, sitterId);
+        //console.log('in useEffect-fetchData', filterIdd, sitterId);
 
         if(filterIdd && sitterId) {
             fetchData(filterIdd, sitterId);

@@ -32,6 +32,8 @@ class Handle_Search_Result
 
             $service_meta = ACF::getUserMetaField($pref_fields, $user->ID);
 
+            // todo - check if sitter profile is accepted or not yet
+
 
             if ( ! self::searchMatchByIdForServiceWanted($service_meta, $service_wanted) ) {
 
@@ -63,6 +65,11 @@ class Handle_Search_Result
     protected static function searchMatchByIdForServiceWanted($service_meta, $seraching_service_ids): bool
     {
 
+        if(empty($service_meta['preferred_services'])) {
+
+            return true;
+        }
+
         foreach( $service_meta['preferred_services'] as $item ) {
 
             if (in_array($item->ID, $seraching_service_ids)) {
@@ -79,6 +86,7 @@ class Handle_Search_Result
         // todo - cached location array while saving sitter preference
         $cachedLoc = Users::getSitterPreferredLocationFromCache($userId, $service_meta);
 
+        return true; // todo -
         return in_array($name, $cachedLoc);
     }
 

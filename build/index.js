@@ -3925,7 +3925,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 const request = function (method, route, data = {}) {
-  let obj = window.bpcFrontObj || window.bpcAdminObj;
+  let obj = window.mmcFrontObj || window.mmcAdminObj;
   let url = obj.ajax_url;
   if (route) {
     url = `${obj.rest.url}/${route}`;
@@ -4275,11 +4275,11 @@ const SearchResults = ({
       setLoading(false);
       setError('No filter_idd or sitter_id parameter found in the URL.');
     }
-    console.log('in useEffect-isLoggedIn', window.bpcFrontObj.mmcUser);
-    if (window.bpcFrontObj.mmcUser.isLoggedIn) {
-      setIsLoggedIn(window.bpcFrontObj.mmcUser.isLoggedIn);
-      setUserRole(window.bpcFrontObj.mmcUser.userRole);
-      setUserIdd(window.bpcFrontObj.mmcUser.userIdd);
+    console.log('in useEffect-isLoggedIn', window.mmcFrontObj.mmcUser);
+    if (window.mmcFrontObj.mmcUser.isLoggedIn) {
+      setIsLoggedIn(window.mmcFrontObj.mmcUser.isLoggedIn);
+      setUserRole(window.mmcFrontObj.mmcUser.userRole);
+      setUserIdd(window.mmcFrontObj.mmcUser.userIdd);
     }
   }, []);
   const fetchData = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(async (filterIdd, sitterId) => {
@@ -4303,7 +4303,8 @@ const SearchResults = ({
     });
   }, []);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    console.log('in useEffect-fetchData', filterIdd, sitterId);
+    //console.log('in useEffect-fetchData', filterIdd, sitterId);
+
     if (filterIdd && sitterId) {
       fetchData(filterIdd, sitterId);
     }

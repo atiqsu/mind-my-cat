@@ -1,7 +1,7 @@
 
 const request = function (method, route, data = {}) {
 
-    let obj = window.bpcFrontObj || window.bpcAdminObj;
+    let obj = window.mmcFrontObj || window.mmcAdminObj;
     let url = obj.ajax_url ;
     
     if ( route ) {

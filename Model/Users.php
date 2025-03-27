@@ -106,6 +106,11 @@ class Users
 
             // todo - this is very temporary, bare minimum func
 
+            if(empty($service_meta['preferred_location'])) {
+
+                return [];
+            }
+
             foreach( $service_meta['preferred_location'] as $item ) {
 
                 $loc[] = $item->name;
