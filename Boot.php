@@ -58,7 +58,7 @@ class Boot
     {
 
         # CPTs
-        (new Cpt_Services)->init();
+        //(new Cpt_Services)->init();
 
         # All ajax handlers
         new Handle_Search_Submit;
