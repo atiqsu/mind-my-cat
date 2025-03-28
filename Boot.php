@@ -22,6 +22,9 @@ use Mindmycat\Short_Code\Contract_Details;
 use Mindmycat\Short_Code\Search_Result;
 use Mindmycat\Handler\Ajax_Session_Start;
 use Mindmycat\Handler\Ajax_Session_End;
+use Mindmycat\Handler\My_Account_Extend;
+use Mindmycat\Handler\Pet_Booking_Tab_In_My_Acc;
+use Mindmycat\Handler\Woo_Thank_You;
 
 class Boot
 {
@@ -151,10 +154,8 @@ class Boot
        (new Search_Filter)->init();
        (new Search_Result)->init();
 //        (new Contract_Details)->init();
-//
-//
-//        Woocom_Handler::add_endpoint();
-//        new Woocom_Handler;
+
+        (new My_Account_Extend)->rewrite()->extend();
     }
 }
 

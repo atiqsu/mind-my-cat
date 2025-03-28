@@ -23,6 +23,7 @@ class Contract extends WPModel
         return $model->where('owner_id', $owner_id)
         ->where('status', Config::CONTRACT_STATUS_COMPLETED, '!=')
         ->where('status', Config::CONTRACT_STATUS_CANCELLED, '!=')
+        ->orderBy('id', 'desc')
         ->get();
     }
 
@@ -33,6 +34,7 @@ class Contract extends WPModel
         return $model->where('sitter_id', $sitter_id)
         ->where('status', Config::CONTRACT_STATUS_COMPLETED, '!=')
         ->where('status', Config::CONTRACT_STATUS_CANCELLED, '!=')
+        ->orderBy('id', 'desc')
         ->get();
     }
 
@@ -42,8 +44,13 @@ class Contract extends WPModel
 
         return $model->where('status', Config::CONTRACT_STATUS_COMPLETED, '!=')
         ->where('status', Config::CONTRACT_STATUS_CANCELLED, '!=')
+        ->orderBy('id', 'desc')
         ->get();
     }
 
+    public static function getContractById($id) {
+
+        return Contract::find($id);
+    }
 }
 
