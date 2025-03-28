@@ -4379,10 +4379,6 @@ const SearchResults = ({
         end: (0,_DateJ__WEBPACK_IMPORTED_MODULE_4__.timestampFromKey)(slot, 1)
       });
     });
-
-    //console.log(bookedSlot, 'in handleSave', bookingData, Date.now());
-    //handleSave
-
     setLoading(true);
     setError(null);
     _Request__WEBPACK_IMPORTED_MODULE_1__["default"].post(null, {
@@ -4391,9 +4387,11 @@ const SearchResults = ({
       sitter_id: sitterId,
       scheduled: bookingData
     }).then(res => {
-      //contract_id
-
-      console.log('in handleSave', res);
+      if (res.success) {
+        window.location.href = res.payment_url;
+      } else {
+        setError(res.error);
+      }
     }).catch(err => {
       setLoading(false);
       setError('Failed to fetch data. Please try again later.');

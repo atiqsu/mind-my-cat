@@ -4,6 +4,8 @@ namespace Mindmycat\Handler;
 
 use Mindmycat\Model\Contract;
 use Mindmycat\Config;
+use Mindmycat\Helper;
+use Mindmycat\Model\WooCom;
 
 class Ajax_Save_Owner_Requested_Schedule
 {
@@ -51,10 +53,39 @@ class Ajax_Save_Owner_Requested_Schedule
                     'sitter_id' => $sitter_id,
                     'schedule' => json_encode($scheduled),
                     'service_info' => json_encode($user_requirement),
-                    'status' => Config::CONTRACT_STATUS_READY_FOR_DEPOSIT,
+                    'status' => Config::CONTRACT_STATUS_READY_FOR_PREVISIT_DEPOSIT,
                 ]);
 
-                echo json_encode(['success' => 'Contract created successfully', 'contract_id' => $contract]);
+                $product_id = WooCom::getPreVisitProductId();
+
+                $product = wc_get_product( $product_id );
+
+                if(empty($product)) {
+                    echo json_encode(['error' => 'Product not found']);
+                    wp_die();
+                }
+
+                $order = WooCom::createPreVisitOrder($product, $owner_id);
+                
+                if(empty($order)) {
+                    echo json_encode(['error' => 'Order could not be created']);
+                    wp_die();
+                }
+
+                Contract::update([
+                    'order_id' => $order->get_id(),
+                ], [
+                    'id' => $contract
+                ]);
+
+                echo json_encode([
+                    'success' => 'Contract created successfully', 
+                    'contract_id' => $contract,
+                    'order_id' => $order->get_id(),
+                    'order_url' => Helper::get_order_url($order->get_id()),
+                    'payment_url' => $order->get_checkout_payment_url(),
+                ]);
+
                 wp_die();
 
             } catch (\Exception $e) {

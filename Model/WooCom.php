@@ -2,6 +2,8 @@
 
 namespace Mindmycat\Model;
 
+use Mindmycat\Helper;
+
 class WooCom
 {
     public static function getOrderStatus( $order_id )
@@ -59,5 +61,22 @@ class WooCom
         }
         
         return $default;
+    }
+
+
+    public static function createPreVisitOrder($product, $owner_id) {
+
+        $consultation_fee = Helper::get_previsit_fee();
+        
+        $product->set_price( $consultation_fee );
+
+        $order = wc_create_order();
+        $order->add_product($product, 1);
+        $order->set_customer_id($owner_id);
+        $order->calculate_totals();
+        $order->set_status('pending');
+        $order->save();
+
+        return $order;
     }
 }

@@ -208,8 +208,6 @@ const SearchResults = ( {userId} ) => {
             });
         });
 
-        //console.log(bookedSlot, 'in handleSave', bookingData, Date.now());
-        //handleSave
 
         setLoading(true);
         setError(null);
@@ -222,9 +220,11 @@ const SearchResults = ( {userId} ) => {
 
         }).then(res => {
 
-            //contract_id
-            
-            console.log('in handleSave', res);
+            if(res.success) {
+                window.location.href = res.payment_url;
+            } else {
+                setError(res.error);
+            }
             
         }).catch(err => {
 
