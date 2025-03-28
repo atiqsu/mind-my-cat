@@ -6,6 +6,12 @@ use Mindmycat\Helper;
 
 class WooCom
 {
+
+    public static function getOrder( $order_id )
+    {
+        return wc_get_order( $order_id );
+    }
+
     public static function getOrderStatus( $order_id )
     {
         $order = wc_get_order( $order_id );
