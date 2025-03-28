@@ -322,6 +322,15 @@ input[type=text],  input[type=number], select {
     border-radius: 5px;
     margin-bottom: 5px;
 }
+
+.grid_slot_inner_inner {
+    border: dashed 1px red;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+
 .grid_slot_header {
     
     padding: 5px;

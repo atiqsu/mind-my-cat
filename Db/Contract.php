@@ -22,6 +22,8 @@ class Contract
                 `order_id` BIGINT UNSIGNED NULL DEFAULT 0,
                 `order_id2` BIGINT UNSIGNED NULL DEFAULT 0,
                 `status` VARCHAR(60) NOT NULL DEFAULT 'pending',
+                `start_date` DATE NULL,
+                `end_date` DATE NULL,
                 `previsit_date` DATE NULL,
                 `schedule` longtext NULL,
                 `service_info` longtext NULL,
